@@ -73,7 +73,7 @@ claude-code-public/
 │   ├── agents/                  # 6 specialised review agents
 │   ├── rules/                   # 9 auto-loaded policy rules
 │   └── settings.json            # Permissions, hooks, model config
-├── skills/                      # 30 slash commands
+├── skills/                      # 31 slash commands
 │   ├── shared/                  # Shared utilities (palettes, scoring, rhetoric)
 │   ├── proofread/               # Academic proofreading
 │   ├── latex-autofix/           # LaTeX compilation + auto-fix
