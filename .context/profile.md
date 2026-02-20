@@ -35,4 +35,3 @@
 - **Data analysis:** R (primary), Python (secondary)
 - **Version control:** Git
 - **Reference management:** Paperpile (synced to `paperpile.bib`)
-- **Task management:** Notion

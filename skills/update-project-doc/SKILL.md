@@ -142,5 +142,4 @@ Updated project docs:
 ## Cross-References
 
 - `/session-close` — offers to run this skill at Step 3.5
-- `/sync-notion` — syncs state to the central context library (complementary; run after this)
 - `/update-focus` — updates `current-focus.md` (different purpose: session state, not doc accuracy)

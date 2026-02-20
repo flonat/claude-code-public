@@ -2,9 +2,9 @@
 
 > How to process the user's meeting transcripts and extract action items.
 
-## Source: Notion Meeting Transcripts
+## Source: Meeting Transcripts
 
-Meeting transcripts are stored in Notion as pages with titles like:
+Meeting transcripts are stored as pages with titles like:
 - `@14 January 2026 14:31`
 - `@8 December 2025 16:02`
 
@@ -33,7 +33,7 @@ For each action item, extract:
 | **Source Meeting** | Link to the transcript | @14 January 2026 |
 | **Context** | Why this matters / what was discussed | "Reviewer 2 requested more references on cognitive load" |
 
-### Output Format for Notion
+### Output Format
 
 Create tasks in **Tasks Tracker** database with:
 
@@ -70,7 +70,7 @@ Description:
 1. **Identify unprocessed transcripts** - Pages with `@[Date]` format
 2. **Scan for action language** - Commitments, requests, agreements
 3. **Extract with full context** - Don't just list tasks, explain why
-4. **Create in Notion** - Add to Tasks Tracker with proper fields
+4. **Create in task manager** - Add to Tasks Tracker with proper fields
 5. **Mark as processed** - Add a property or note to the transcript page
 
 ## Special Cases
@@ -89,6 +89,6 @@ Description:
 
 ## Integration
 
-- **Auto-create:** Tasks go directly into Notion
+- **Auto-create:** Tasks go directly into task manager
 - **Review:** the user reviews in the "Inbox" view (no due date set)
 - **Triage:** During daily review, assign priorities and dates

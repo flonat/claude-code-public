@@ -83,7 +83,7 @@ Present the assessment to the user before proceeding.
 1. **Project `CLAUDE.md`** — update target journal, formatting notes
 2. **Project `README.md`** — update journal reference, submission info
 3. **`MEMORY.md`** — carry forward any learnings, update journal-specific notes
-4. **Notion Research Pipeline** — update the Target Journal and Status fields
+4. **** — update the Target Journal and Status fields
 
 ### Phase 6: Compile and Verify
 
@@ -109,7 +109,7 @@ Changes made:
 - Page count: [N] pages (limit: [M])
 - Compilation: clean (0 warnings)
 
-Updated: CLAUDE.md, README.md, Notion
+Updated: CLAUDE.md, README.md
 ```
 
 ---
@@ -131,4 +131,3 @@ Updated: CLAUDE.md, README.md, Notion
 | `/latex-autofix` | **Default compiler** — use for compilation with auto error resolution |
 | `/latex` | For manual compilation config and `.latexmkrc` setup |
 | `/proofread` | After retarget to check for remnants of old journal formatting |
-| `/sync-notion` | After Phase 5 to sync with central context library |

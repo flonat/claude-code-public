@@ -22,7 +22,7 @@ Ask the user these questions (adapt based on context):
 
 After understanding context, present:
 
-1. **Overdue tasks** from Notion (Tasks Tracker)
+1. **Overdue tasks** from your task manager
 2. **Due today** items
 3. **Upcoming deadlines** (next 7 days)
 4. **Recent meeting action items** not yet addressed
@@ -77,7 +77,7 @@ Format the daily plan as:
 3. Reply to [Supervisor]'s email about the project timeline
 
 **Could Do:**
-4. Review Notion inbox for captured tasks
+4. Review inbox for captured tasks
 
 That leaves your morning for focused writing and gives you buffer before the meeting. Does this feel right?
 
@@ -85,7 +85,7 @@ That leaves your morning for focused writing and gives you buffer before the mee
 
 ## Integration Points
 
-- **Notion:** Query Tasks Tracker for overdue/due items
+- **Task manager:** Query task manager for overdue/due items
 - **Calendar:** Check for meetings (if connected)
 - **Current Focus:** Read `.context/current-focus.md`
 - **Meeting Notes:** Check recent `@[Date]` pages for unprocessed action items

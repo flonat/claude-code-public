@@ -37,7 +37,7 @@ Edit these files with your own details:
 - `.context/profile.md` — Your name, institution, research areas, supervisors
 - `.context/current-focus.md` — What you're working on right now
 - `.context/projects/_index.md` — Your active research projects
-- `CLAUDE.md` — Conventions, tool preferences, Notion database IDs
+- `CLAUDE.md` — Conventions and tool preferences
 
 ### 4. Configure settings
 
@@ -170,14 +170,6 @@ skills/my-custom-skill/
 ```
 
 The `SKILL.md` needs YAML frontmatter with `name`, `description`, and optionally `allowed-tools`. See any existing skill for the format.
-
-### Connecting Notion
-
-If you use Notion for task management:
-
-1. Set up the [Notion MCP server](https://github.com/anthropics/claude-code) for Claude Code
-2. Add your database IDs to `CLAUDE.md`
-3. The workflows in `.context/workflows/` reference Notion for daily reviews and task management
 
 ### Setting up OpenAlex MCP
 

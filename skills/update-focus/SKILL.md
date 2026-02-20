@@ -172,7 +172,6 @@ If no session log was created this session, offer: "Want me to run `/session-log
 |-------|-------------|
 | `/session-log` | Creates the detailed log; `/update-focus` updates the working memory. Often run together. |
 | `/save-context` | For ad-hoc saves to any context file. Defers to `/update-focus` for structured focus updates. |
-| `/sync-notion` | Updates `projects/_index.md` and Notion. For full session-level focus updates, defers to `/update-focus`. |
 
 ## Example Interaction
 

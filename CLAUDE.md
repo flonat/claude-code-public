@@ -66,19 +66,6 @@ Before running any experiment sweep or simulation batch:
 - When a page/word limit is specified, treat it as a hard constraint. Draft to 80%, then expand — never exceed and trim.
 - Always report the actual page/word count after drafting.
 
-## Notion Integration
-
-<!-- CUSTOMISE: Add your Notion database IDs if using Notion -->
-
-If you use Notion for task management, configure these database IDs:
-
-| Database | ID |
-|----------|-----|
-| Tasks Tracker | `YOUR-TASKS-DATABASE-ID-HERE` |
-| Research Pipeline | `YOUR-PIPELINE-DATABASE-ID-HERE` |
-
-**API usage:** Always fetch the database schema first to get correct property names before making any create/update calls.
-
 ## Workflows
 
 Detailed instructions in `.context/workflows/`:
