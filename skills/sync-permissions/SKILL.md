@@ -1,0 +1,126 @@
+---
+name: sync-permissions
+description: "Sync global permissions into the current project and verify skills & agents symlinks. Additive merge — never removes existing project permissions."
+allowed-tools: Bash(jq*), Bash(ln*), Bash(ls*), Bash(test*), Bash(readlink*), Read, Write, Edit
+argument-hint: (no arguments)
+---
+
+# Update Rules Skill
+
+> Sync global permissions, skills, and agents into the current project without losing project-specific settings.
+
+## Purpose
+
+The `SessionStart` hook only copies permissions when `.claude/settings.local.json` doesn't exist yet. After that, new global permissions never propagate to existing projects. This skill fills that gap — run it anytime to pull in new permissions additively.
+
+## When to Use
+
+- After adding new permissions to `~/.claude/settings.json`
+- When starting work in a project that hasn't been updated in a while
+- After creating a new skill and wanting it available everywhere
+- When the user says "sync permissions", "update rules", "update my permissions"
+
+## What It Does
+
+1. **Merge permissions** — adds global permissions into project-local, keeping any project-specific ones
+2. **Verify skills symlink** — ensures `~/.claude/skills/` points to the skills directory
+3. **Verify agents symlink** — ensures `~/.claude/agents/` points to the agents directory
+4. **Report changes** — shows exactly what was added
+
+## What It Does NOT Do
+
+- Never removes existing project permissions (additive only)
+- Never modifies `~/.claude/settings.json` (reads it, never writes)
+- Never touches `model`, `hooks`, or other global settings keys
+
+---
+
+## Workflow
+
+### Step 1: Read Both Permission Files
+
+Read these two files:
+- **Global:** `~/.claude/settings.json` → extract `permissions.allow` array
+- **Local:** `.claude/settings.local.json` → extract `permissions.allow` array
+
+If the local file doesn't exist, create it with global permissions (same as the SessionStart hook).
+
+### Step 2: Compute the Union
+
+Merge the two permission arrays:
+- Start with all existing **local** permissions (preserve everything)
+- Add any **global** permissions not already present in local
+- Sort the final array for readability
+
+The merge logic:
+```
+new_permissions = local_permissions ∪ global_permissions
+added = new_permissions - local_permissions
+```
+
+### Step 3: Write the Merged Result
+
+If there are new permissions to add:
+1. Read the full local settings file (preserve any non-permissions keys)
+2. Replace `permissions.allow` with the merged array
+3. Write back to `.claude/settings.local.json`
+
+If no new permissions, skip the write.
+
+### Step 4: Verify Skills Symlink
+
+Check that `~/.claude/skills/` exists and points to the correct target:
+- **Expected target:** `~/Library/CloudStorage/YOUR-CLOUD/Task Management/skills`
+- If missing, create the symlink
+- If exists but points elsewhere, warn the user (don't silently change it)
+
+### Step 5: Verify Agents Symlink
+
+Check that `~/.claude/agents/` exists and points to the correct target:
+- **Expected target:** `~/Library/CloudStorage/YOUR-CLOUD/Task Management/.claude/agents`
+- If missing, create the symlink
+- If exists but points elsewhere, warn the user (don't silently change it)
+
+### Step 6: Report
+
+Output a summary:
+
+```
+Permissions sync complete:
+- Global permissions: [N]
+- Local permissions (before): [N]
+- New permissions added: [N] — [list them]
+- Local permissions (after): [N]
+- Skills symlink: ✓ exists / ✗ created / ⚠ points to unexpected target
+- Agents symlink: ✓ exists / ✗ created / ⚠ points to unexpected target
+```
+
+If nothing changed:
+```
+Everything up to date. No new permissions to add. Skills symlink OK. Agents symlink OK.
+```
+
+---
+
+## Example
+
+Running `/sync-permissions` after adding `WebFetch` and `Skill(literature)` to `~/.claude/settings.json`:
+
+```
+Permissions sync complete:
+- Global permissions: 25
+- Local permissions (before): 64
+- New permissions added: 2 — WebFetch, Skill(literature)
+- Local permissions (after): 66
+- Skills symlink: ✓ exists → Task Management/skills/
+- Agents symlink: ✓ exists → Task Management/.claude/agents/
+```
+
+---
+
+## Safety
+
+- **Additive only** — the skill can only add permissions, never remove them
+- **No global writes** — global settings are read-only
+- **Symlink caution** — if the symlink target is unexpected, it warns rather than overwrites
+- **Idempotent** — safe to run multiple times; re-running with no changes produces no writes
