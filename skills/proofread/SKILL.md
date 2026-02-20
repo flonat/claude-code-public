@@ -27,7 +27,7 @@ argument-hint: [project-path or tex-file]
 1. **Locate files**: Find all `.tex` files in the project (and `.log` files for LaTeX diagnostics)
 2. **Read the document**: Read all `.tex` source files in order
 3. **Run 6 check categories** (below)
-4. **Produce report**: Write `PROOFREAD-REPORT.md` in the project directory
+4. **Produce report**: Write `PROOFREAD-REPORT.md` in a `proofread/` subfolder of the project directory (create it if it does not exist)
 
 ## Check Categories
 
