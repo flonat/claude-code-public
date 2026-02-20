@@ -324,3 +324,23 @@
 
 **After:**
 > The company plans to open two more locations next year.
+
+---
+
+### 25. Compound Sentence Bloat
+
+**Words to watch:** Chains of "and", "while", "which", "as well as", ", with", ", where" joining unrelated clauses; sentences with 3+ commas separating independent ideas
+
+**Problem:** LLMs stitch multiple independent ideas into a single sentence using commas and conjunctions, where a human would use a full stop. The result reads like a breathless list rather than considered prose. Each idea deserves its own sentence so the reader can absorb it.
+
+**Before:**
+> The company was founded in 2018 by two Stanford graduates, and it quickly grew to over 200 employees, while also expanding into European markets, which led to partnerships with several major retailers across the continent.
+
+**After:**
+> The company was founded in 2018 by two Stanford graduates. It grew to over 200 employees within two years and expanded into European markets, partnering with several major retailers.
+
+**Before (academic):**
+> We estimate a difference-in-differences model using county-level panel data from 2010 to 2020, controlling for demographic characteristics and regional fixed effects, and we find that the policy reduced emissions by 12%, which is robust to alternative specifications and placebo tests.
+
+**After (academic):**
+> We estimate a difference-in-differences model using county-level panel data from 2010 to 2020, controlling for demographic characteristics and regional fixed effects. The policy reduced emissions by 12%. This estimate is robust to alternative specifications and placebo tests.

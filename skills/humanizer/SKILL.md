@@ -104,6 +104,7 @@ These are just as problematic in academic writing:
 - **#17-21 Emojis, chatbot artifacts, disclaimers, sycophancy** — should never appear
 - **#22 Filler phrases** — "in order to" → "to" improves any academic sentence
 - **#24 Generic conclusions** — "future research should explore..." needs specifics
+- **#25 Compound sentence bloat** — academic sentences can be long when grammar demands it, but chaining unrelated findings with "and" or "which" is still sloppy
 
 ### Personality and soul in academic mode
 
@@ -118,7 +119,7 @@ Do NOT apply the general "add soul" guidance. Instead:
 
 ## The 24 Patterns
 
-Four categories, 24 patterns total. Each has words to watch, before/after examples, and the core problem it addresses.
+Four categories, 25 patterns total. Each has words to watch, before/after examples, and the core problem it addresses.
 
 **Full reference with all before/after examples:** [`references/patterns.md`](references/patterns.md)
 
@@ -148,6 +149,7 @@ Four categories, 24 patterns total. Each has words to watch, before/after exampl
 | 22 | Filler | Filler phrases | "In order to" → "To" |
 | 23 | Filler | Excessive hedging | "could potentially possibly" |
 | 24 | Filler | Generic conclusions | "The future looks bright" |
+| 25 | Language | Compound sentence bloat | Independent ideas crammed into one sentence |
 
 ---
 
